@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project1</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="javascript.js" defer></script>
+</head>
+
+<body>
+  <div id="start-screen">
+    <h1>🐱 ADOPT YOUR PET 🐶</h1>
+    <p>Adopteer en verzorg je eigen huisdier!</p>
+    <div class="pet-container">
+      <img src="images/pets.png" alt="Dog and Cat" class="pet-image">
+      <button class="start-button" onclick="showChooseScreen()">Start</button>
+      <button id="play-sound">Speel Miauw 📢</button>
+    </div>
+  </div>
+  <div id="choose-screen" class="choose-screen hidden">
+    <div class="pet-optionFlip">
+      <h2>Flip</h2>
+      <img src="images/dog.png" alt="Flip" class="pet-image" />
+      <button class="choose-button" onclick="choosePet('Flip')">Kies</button>
+    </div>
+    <div class="pet-optionFlop">
+      <h2>Flop</h2>
+      <img src="images/cat.png" alt="Flop" class="pet-image" />
+      <button class="choose-button" onclick="choosePet('Flop')">Kies</button>
+    </div>
+    <section>
+      <p id="chosen-pet-text" class="chosen-text"></p>
+      <button id="start-tamagotchi-button" class="hidden start-button" onclick="startTamagotchi()">Adopteer!</button>
+    </section>
+  </div>
+  <div id="tamagotchi-screen" class="hidden">
+  <h1 id="pet-name">Jouw Huisdier</h1>
+  <div id="pet-image-container"></div>
+
+  <div class="pet-stats">
+    <p>Honger:</p>
+    <div class="stat-bar"><div id="hunger-bar" class="bar"></div></div>
+    <p>Geluk:</p>
+    <div class="stat-bar"><div id="happiness-bar" class="bar"></div></div>
+    <p>Gezondheid:</p>
+    <div class="stat-bar"><div id="health-bar" class="bar"></div></div>
+  </div>
+    <div class="action-buttons">
+    <button class="action-button" onclick="feedPet()">
+        <img src="images/food.png" alt="Eten Icon" class="button-icon"> Voer
+    </button>
+    <button class="action-button" onclick="playWithPet()">
+        <img src="images/toy.png" alt="Speeltje Icon" class="button-icon"> Speel
+    </button>
+    <button class="action-button" onclick="letPetOutside()">
+    <img src="images/tree.png" alt="Boompje Icon" class="button-icon"> Naar Buiten Laten
+    </button>
+    <button class="action-button" onclick="giveMedicine()">
+      <img src="images/medicine.png" alt="Medicine Icon" class="button-icon"> Medicijnen
+    </button>
+</div>
+<div id="food-menu" class="hidden food-menu">
+    <button onclick="chooseFood(0)">
+        <img src="images/hamburger.png" alt="Hamburger" class="food-icon"> Hamburger
+    </button>
+    <button onclick="chooseFood(1)">
+        <img src="images/meat.png" alt="Vlees" class="food-icon"> Vlees
+    </button>
+    <button onclick="chooseFood(2)">
+        <img src="images/fish.png" alt="Vis" class="food-icon"> Vis
+    </button>
+    <button onclick="chooseFood(3)">
+        <img src="images/candy.png" alt="Snoep" class="food-icon"> Snoep
+    </button>
+</div>
+<div id="hunger-increase" class="hidden">+10</div>
+<p id="message" class="hidden"></p>
+<button id="restart-button" class="hidden" onclick="restartGame()">Start opnieuw</button>
+</div>
+</body>
+</html>
